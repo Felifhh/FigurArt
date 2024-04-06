@@ -1,0 +1,79 @@
+
+.header-nav {
+    background-color: black;
+    border-bottom: 1px magenta;
+    justify-content: space-around;
+}
+
+.header-nav_main{
+    display: flex;
+    align-items: center;
+}
+.header-container-primero{
+    display: flex;
+    
+}
+.header-container-segundo{
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+}
+
+.header-container-centro {
+    margin-right: auto;
+    display: flex;
+    width:auto;
+    
+}
+
+ul {
+    list-style-type: none; /* Elimina los estilos de viñetas predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+      
+  }
+  
+ul li {
+    display: inline-block; /* Hace que los elementos de la lista sean en línea (uno al lado del otro) */
+    margin-right: 10px; /* Añade un pequeño margen entre los elementos */
+  }
+
+.item-navbar {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+.carrusel{
+    width: 60%;
+    display: flex;
+    position: relative;
+    left: 20%; 
+    background-color:aqua;
+
+
+}
+.carrusel-main{
+    background-color: black;
+}
+
+.container-footer{
+    background-color: black;
+}
+
+.container-prod-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.container-prod1{
+    width: 40%;
+    display: block;
+    flex-direction: column;
+    margin-right: auto;
+}
+.container-prod2{
+    width: 40%;
+    display: block;
+    flex-direction: column;
+}
