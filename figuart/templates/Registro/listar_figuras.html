@@ -1,0 +1,59 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}ListaDeFiguras{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-prod-main">
+<div class="container">
+    <h1 class="display-3">Figuras</h1>
+    <hr>
+</div>
+<div>
+    <br>
+  
+            <a class="btn-agregar-figura" role="button" href="{% url 'Registro:form_figura.html' %}">Agregar</a>
+   
+    <br>
+    {% if not object_list %}
+    <h1>No hay registro de figuras (agregue algunas)</h1>
+    <br><br><br><br><br><br><br><br>
+    {% else %}
+    <table class='tabla-listar'>
+        <thead>
+            <tr>
+                <td>Imagen</td>
+                <td>Nombre</td>
+                <td>Precio</td>
+                <td>Descripción</td>
+                <td>Proveedor</td>
+                <td>Estado</td>
+                <td>Modificar</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Figura in object_list %}
+            <tr>
+                <td><img src= /media/{{ Figura.imagen }} style="width: 100px;"/></td>
+                <td>{{ Figura.nombre }}</td>
+                <td>{{ Figura.precio }}</td>
+                <td>{{ Figura.descripcion }}</td>
+                <td>{{ Figura.proveedor }}</td>
+                <td>{{ Figura.estado }}</td>
+                <td>
+                    <a class="btn-crud-delete-figura" href="{% url 'Registro:borrar_figura.html' Figura.id %}">Eliminar</a>
+                    <br>
+                    <a class="btn-crud-editar-figura" href="{% url 'Registro:editar_figura.html' Figura.id%}">Editar</a>
+                </td>
+   
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+<br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}

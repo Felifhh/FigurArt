@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}EditarFigurasRegistradas{% endblock %}
+
+{% block content %}
+<div class="container-prod-main">
+    <br><br><br>
+<div class="container-crud-main">
+    <br><br>
+    <div class="container-crud">
+    <h1 class="container-crud-titulo">Editar Figura</h1>
+    <form id="formulario" method="POST" enctype= "multipart/form-data" >{% csrf_token %}
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.name}}">{{ field.label_tag }}</label><br>            
+            {{ field }}
+            <div class="bg-danger mt-1">{{ field.errors }}</div>
+        </div>
+        {% endfor %}
+        
+        <br>
+        <input type="submit" value="Grabar" class="btn-crud-figura">
+        <br>
+        <a class= "btn-cancel-figura" href="{% url 'Registro:listar_figuras.html' %}">Cancelar</a>
+    
+    </form>
+    <br><br>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}

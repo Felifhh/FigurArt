@@ -1,0 +1,30 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}EliminarFigura{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-prod-main">
+    <br><br><br>
+<form method="POST">{% csrf_token %}
+
+        <div class="container-crud-main">
+            <br><br>
+        <h1 class="container-crud-titulo">¿Desea eliminar el registro de {{object.nombre}}?</h1> 
+        <br>
+        <div class= "container-crud"> 
+            <button class = "btn-delete-figura" type="submit">Si</button>
+            <br>
+            <a class= "btn-cancel-figura" href="{% url 'Registro:listar_figuras.html' %}">Cancelar</a> 
+        </div>
+        <br><br>
+    </div>
+
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+
+{% endblock %}
