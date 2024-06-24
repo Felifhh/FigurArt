@@ -22,64 +22,55 @@
    <nav class="header-nav">
     <div class="header-nav_main">
       <div class="header-container-primero">
-        <a href="index.html"><img src="{% static 'images/LogosRedes/LogoFigurart.png' %}" alt="" width="100" height="50"></a>
+        <a href="{% url 'home' %}"><img src="{% static 'images/LogosRedes/LogoFigurart.png' %}" alt="" width="100" height="50"></a>
       </div>
       <div class="header-container-centro">
         <ul class="lista">
 
           <li>
-            <a class="item-navbar" href="index.html">Inicio</a>
+            <a class="item-navbar" href="{% url 'home' %}">Inicio</a>
           </li>
           <li>
-            <a class="item-navbar" href="Productos.html">Productos</a>
+            <a class="item-navbar" href="{% url 'nosotros' %}">Nosotros</a>
+          </li>
+          {% if user.is_authenticated %}
+          {% if user.is_superuser %}
+          <li>
+            <a class="item-navbar" href="{% url 'Registro:listar_figuras.html' %}">Administrar Figuras</a>
           </li>
           <li>
-            <a class="item-navbar" href="Nosotros.html">Nosotros</a>
+            <a class="item-navbar" href="{% url 'listar_users.html' %}">Ver Usuarios</a>
           </li>
-        </div>
+        </ul>
+          {% endif %}
+          {% endif %}
+
+
+      </div>
         
         <div class="header-container-segundo">
-        <button id="btn-modal-abrir" class="btn-modal-abrir">Ingresar</button>
-        <a href="Registro.html" class="item-navbar" >Registrarse</a>
-
-        <dialog id="Modal-Iniciosesion" class="Container-modal-inicio">
-          <div class="container-main-modal">
-            <button id="btn-modal-cerrar" class="btn-modal-cerrar"> Cerrar </button>
-            <br><br>
-            <h1> Iniciar Sesion </h1>
-            <br><br>
-            <div class="container-modal-datos">
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1" style="font-size: 15px;">Correo</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted" style="font-size: 13px;">Nunca compartas tu datos con alguien mas</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1" style="font-size: 15px;">Constraseña</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1" style="font-size: 15px;">Recuerdame</label>
-                </div>
-                <br><br>
-                <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
-                <button class="btn btn-primary"><a href="Registro.html" class="btn-modal-registro"> Registrarse </a> </button>
-              </form>
-          </div>
-          </div>
-        </dialog>
-      
-      <ul class="lista">
-        <div>
-          <li><a class="item-navbar" href="Carrito.html"><img class="container-footer-redes" src="{% static 'images/LogosRedes/CarritoCompra.png' %}"
-                alt=""></a></li>
+        <ul class="lista">
+          {% if user.is_authenticated %}
+      <li style="margin: auto;">
+        <a class="item-navbar">@{{ user.get_username }} </a>
+      </li>
+          
+      <li style="margin: auto;">
+        <a class="item-navbar" href="{% url 'logout' %}">Cerrar Sesion</a>
+      </li>
+    {% else %}
+    <li style="margin: auto;">
+        <a class="item-navbar" href="{% url 'login' %}">Iniciar Sesion</a>
+      </li>
+    {% endif %}
+    <li >
+          <a class="item-navbar" href="Carrito.html"><img src="{% static 'images/LogosRedes/CarritoCompra.png' %}"
+            alt="" width="30" height="30"></a>
+          </li>
+          </ul>
         </div>
-      </ul>
       </div>
       {% block navbar %}
-    </div>
   </nav>
   {% endblock %}
 

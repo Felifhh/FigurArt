@@ -1,0 +1,52 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container-prod-main">
+    <br><br><br>
+    <div class="container-main-modal">
+        <br><br>
+        <h1> Iniciar Sesion </h1>
+        <br><br>
+        <div class="container-modal-datos">
+
+          <form method="POST" id="formulario">
+            {% csrf_token %}
+    
+
+            <div class="form-group">
+              <label for="username" style="font-size: 15px;" >Nombre de Usuario</label><br>
+              <input name="username" class="form-control" type="text"/>
+              <div class="bg-danger mt-1">{{ form.errors.username }}</div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" style="font-size: 15px;" >Password</label><br>
+              <input name="password" class="form-control" type="password"/>
+              <div class="bg-danger mt-1">{{ form.errors.password }}</div>
+            </div>
+
+            {% if form.non_field_errors %}
+            <div class="form-group">
+               <div class="bg-danger mt-1 p-2">Login incorrecto!</div>
+            </div>  
+            {% endif %}
+  
+            {{form.non_field_errors}}
+
+            <br><br>
+            <div class="form-group">
+              <input class="btn btn-primary" type="submit" value="Enviar"/>
+          </div>
+          <br>
+            <button class="btn btn-primary"><a href="{% url 'RegistroUsers.html' %}" class="btn-modal-registro"> Registrarse </a> </button>
+          </form>
+
+      </div>
+      </div>
+
+<br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}

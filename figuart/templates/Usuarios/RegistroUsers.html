@@ -1,7 +1,7 @@
 {% extends '../base.html' %}
 {% load static %}
 
-{% block title %}AgregarNuevasFiguras{% endblock %}
+{% block title %}Registrarse{% endblock %}
 
 {% block content %}
 <div class="container-prod-main">
@@ -9,7 +9,7 @@
 <div class="container-crud-main">
     <br><br>
     <div class="container-crud">
-    <h1 class="container-crud-titulo">Agregar Figura</h1>
+    <h1 class="container-crud-titulo">Registrarse</h1>
     <form id="formulario" method="POST" enctype= "multipart/form-data" >{% csrf_token %}
         {% csrf_token %}
         <!-- {{ form.as_p }} -->
@@ -23,9 +23,8 @@
         {% endfor %}
         
         <br>
-        <input type="submit" value="Grabar" class="btn-crud-figura">
+        <input type="submit" value="Grabar" class="btn-registro-user">
         <br>
-        <a class= "btn-cancel-figura" href="{% url 'Registro:listar_figuras.html' %}">Cancelar</a>
     
     </form>
     <br><br>
