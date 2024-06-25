@@ -3,8 +3,7 @@ from django.views.generic import ListView,CreateView,DeleteView,UpdateView
 from .models import Figura
 from .forms import FiguraForm
 from django.urls import reverse_lazy
-from django.shortcuts import HttpResponse
-import json
+
 
 class FiguraList (ListView):                    
     model = Figura
