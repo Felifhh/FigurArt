@@ -1,0 +1,36 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}
+  RickApi
+{% endblock %}
+
+{% block content %}
+  <div class="container-main-api">
+    <br>
+    <img class="img-api" src="{% static 'images/img/Rick_and_Morty.svg.png' %}" alt="">
+    <br><br>
+    <form id="form-api" method="POST">
+      <div class="form-group">
+        <label for="Episodio" style="color: white; justify-content: center; display: flex;">Episodio </label>
+        <input type="text" name="Episodio" id="Episodio" class="form-control required" style="width: 40%; display: flex;
+        justify-content: center; margin: auto;" placeholder="Ingrese numero de episodio...">
+      </div>
+
+      <br>
+      <button class="btn btn-primary" id="submit-form-api" style="display: flex;
+      justify-content: center; margin: auto;">Cargar Información</button>
+    </form>
+    <div id="info-api" class="text-center" style="color: white;">
+      <h1></h1>
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+{% endblock %} 
+{% block extrajs %}
+<script src={% static 'js/carga_api.js' %}></script>
+{% endblock %}

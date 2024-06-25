@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
-
 .header-nav {
     background-color: #002042;
     justify-content: space-around;
@@ -19,7 +18,6 @@
 
 .header-container-primero {
     display: flex;
-
 }
 
 .header-container-segundo {
@@ -34,22 +32,16 @@
     display: flex;
     width: auto;
     font-size: 13px;
-
 }
 
 ul {
     list-style-type: none;
-    /* Elimina los estilos de viñetas predeterminados */
     padding: 0;
-    /* Elimina el relleno predeterminado */
-
 }
 
 ul li {
     display: inline-block;
-    /* Hace que los elementos de la lista sean en línea (uno al lado del otro) */
     margin-right: 10px;
-    /* Añade un pequeño margen entre los elementos */
 }
 
 .item-navbar {
@@ -80,7 +72,6 @@ ul li {
     width: 20%;
 }
 
-
 .container-footer {
     width: 100%;
     display: block;
@@ -97,7 +88,6 @@ ul li {
     width: 100%;
     color: white;
     text-align: center;
-
 }
 
 .container-footer-redes {
@@ -123,28 +113,20 @@ ul li {
 .container-prod-main {
     background-image: url(../images/img/Background.jpg);
     background-size: cover;
-    /* Ajustar el tamaño de la imagen para cubrir todo el div */
     background-position: center;
-
 }
 
 .container-prod {
-    flex-wrap: wrap;
     display: flex;
-    margin: auto;
+    flex-wrap: wrap;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-}
-
-.container-prod-item {
-    margin-right: 10px;
 }
 
 .container-nosotros-main {
     display: flex;
     justify-content: center;
 }
-
 
 .container-nosotros {
     height: auto;
@@ -218,7 +200,6 @@ ul li {
     text-decoration: none;
     color: white;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .container-registro {
@@ -239,7 +220,6 @@ ul li {
     justify-content: center;
 }
 
-
 .volver-reg {
     list-style-type: none;
     text-decoration: none;
@@ -252,16 +232,16 @@ ul li {
     font-size: 70%;
     display: flex;
 }
+
 .error {
-    color: red; /* Cambia el color del texto a rojo */
-    font-size: 12px; /* Tamaño de fuente opcional */
-    margin-top: 5px; /* Espacio opcional arriba del mensaje */
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .container-main-api {
-    background-image: url(../img/backgraoundApi.jpg);
+    background-image: url(../images/img/backgraoundApi.jpg);
     background-size: cover;
-    /* Ajustar el tamaño de la imagen para cubrir todo el div */
     background-position: center;
 }
 
@@ -272,7 +252,7 @@ ul li {
     margin: auto;
 }
 
-.container-form-concurso-main{
+.container-form-concurso-main {
     background-color: black;
     width: 60%;
     display: flex;
@@ -281,19 +261,88 @@ ul li {
     margin: auto;
 }
 
-.container-concurso-titulo{
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        margin: auto;
-        justify-content: center;
-    }
+.container-concurso-titulo {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    justify-content: center;
+}
 
-.container-form-concurso{
+.container-form-concurso {
     display: flex;
     justify-content: center;
     width: 70%;
     margin: auto;
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-concurso {
+    color: white;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-busqueda {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-formulario-busqueda {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.container-home {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.img-home {
+    width: 100%;
+}
+
+.header-home {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.container-prod-single {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-main-prod-single {
+    width: 100%;
+    background-color: white;
+}
+
+.single-prod-img {
+    display: flex;
+    justify-content: center;
+}
+
+.title-single {
+    display: flex;
+    justify-content: center;
+}
+
+.container-single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
 }
 

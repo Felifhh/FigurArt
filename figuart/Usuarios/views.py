@@ -19,3 +19,12 @@ class UserList(ListView):
 
 def nosotros(request):
     return render(request, 'Plantillas/nosotros.html')
+
+def rickapi(request):
+    return render(request, 'Plantillas/RickApi.html')
+
+def concurso(request):
+    return render(request, 'Plantillas/Concurso.html')
+
+def carrito(request):
+    return render(request, 'Plantillas/Carrito.html')

@@ -21,7 +21,7 @@ class FiguraForm(forms.ModelForm):
             'estado':'Estado de la Figura'
         }
         widgets = {
-            #'imagen':forms.FileInput(attrs={'class':'form-control','type':'file'}),
+            'imagen':forms.FileInput(attrs={'class':'form-control','type':'file'}),
             'nombre':forms.TextInput(attrs={'class':'form-control'}),
             'precio':forms.NumberInput(attrs={'class':'form-control'}),
             'descripcion':forms.TextInput(attrs={'class':'form-control'}),

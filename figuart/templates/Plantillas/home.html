@@ -1,22 +1,24 @@
 {% extends '../base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}
+  Home
+{% endblock %}
 {% block header %}
-<div class="container-carrusel">
-    <img class="container-carrusel-imagen1" src="{% static 'images/Carrusel/Lateral1.png' %}" alt="">
+  <div class="container-carrusel">
+    <img class="container-carrusel-imagen1" src="{% static 'images/Carrusel/Lateral1.png' %}" alt="" />
 
     <div class="carrusel">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="{% static 'images/Carrusel/BrolyCarrusel.png' %}" alt="First slide">
+            <img class="d-block w-100" src="{% static 'images/Carrusel/BrolyCarrusel.png' %}" alt="First slide" />
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'images/Carrusel/LuffyCarrusel.png' %}" alt="Second slide">
+            <img class="d-block w-100" src="{% static 'images/Carrusel/LuffyCarrusel.png' %}" alt="Second slide" />
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'images/Carrusel/MistyCarrusel.png' %}" alt="Third slide">
+            <img class="d-block w-100" src="{% static 'images/Carrusel/MistyCarrusel.png' %}" alt="Third slide" />
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -29,12 +31,29 @@
         </a>
       </div>
     </div>
-    <img class="container-carrusel-imagen2" src="{% static 'images/Carrusel/Lateral2.png' %}" alt="">
+    <img class="container-carrusel-imagen2" src="{% static 'images/Carrusel/Lateral2.png' %}" alt="" />
   </div>
-  {% endblock %}
+{% endblock %}
 
-  {% block content %}   
+{% block content %}
+  <div class="container-prod-main">
+    <br /><br />
+    <div class="container-prod">
+      {% for figura in figuritas %}
+        <div class="card" style="width: 18rem; margin: 10px;">
+          <img src="{{ figura.imagen.url }}" class="card-img-top" alt="{{ figura.nombre }}" style="width: 100%;" />
+          <div class="card-body">
+            <h5 class="card-title">{{ figura.nombre }}</h5>
+            <p class="card-text">Precio: ${{ figura.precio }}</p>
+            <p class="card-text">Descripción: {{ figura.descripcion }}</p>
+            <p class="card-text">Proveedor: {{ figura.proveedor }}</p>
+            <p class="card-text">Estado: {{ figura.estado }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+  </div>
+{% endblock %}
 
 
-  
-  {% endblock %}

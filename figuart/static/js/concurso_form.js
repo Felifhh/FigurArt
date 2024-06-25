@@ -22,7 +22,6 @@ $.validator.addMethod("rut", function(value, element) {
     return dvEsperado == dv.toUpperCase();
 }, "Por favor, ingrese un RUT válido");
 
-
 $(document).ready(function(){
     $('#form_concurso').validate({
         rules: {
@@ -43,23 +42,20 @@ $(document).ready(function(){
             },
             agree: "required",
             count: "required"
+        },
+        messages: {           
+            fullname: {
+                required: "Por favor ingresa tu nombre completo",
+                minlength: "Tu nombre debe ser de no menos de 5 caracteres"
             },
-
-            messages: {           
-                fullname: {
-                   required: "Por favor ingresa tu nombre completo",
-                   minlength: "Tu nombre debe ser de no menos de 5 caracteres"
-                },
-                rut: {
-                    required: "Por favor, ingrese su RUT",
-                    rut: "Por favor, ingrese un RUT válido"
-                },
-                email: "Por favor ingresa un correo válido",
-                comments: "Por favor ingresa un comentario",
-                count: "Seleccione una opción",
-                agree: "Por favor acepta nuestra política",
-             },
-             
-    })
-
+            rut: {
+                required: "Por favor, ingrese su RUT",
+                rut: "Por favor, ingrese un RUT válido"
+            },
+            email: "Por favor ingresa un correo válido",
+            comments: "Por favor ingresa un comentario",
+            count: "Seleccione una opción",
+            agree: "Por favor acepta nuestra política",
+        }
+    });
 });
